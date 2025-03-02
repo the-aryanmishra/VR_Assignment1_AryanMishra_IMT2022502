@@ -1,5 +1,12 @@
 # VR_Assignment1_AryanMishra_IMT2022502
 
+## Installation
+**Clone the repository**:
+```bash
+git clone https://github.com/the-aryanmishra/VR_Assignment1_AryanMishra_IMT2022502.git
+cd VR_Assignment1_AryanMishra_IMT2022502.git
+```
+
 ## Overview
 
 This repository contains two separate Python Notebooks:
