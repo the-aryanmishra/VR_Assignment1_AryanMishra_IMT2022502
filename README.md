@@ -1,129 +1,91 @@
 # VR_Assignment1_AryanMishra_IMT2022502
 
 
-This repository contains two parts for **VR Assignment 1**:
+# VR Assignment 1 - Coin Detection & Segmentation and Panorama Creation
 
-1. **Coin Detection, Segmentation, and Counting**  
-2. **Panorama Creation**
+## Overview
 
-Both parts are implemented in separate Jupyter notebooks:  
-- `coins.ipynb`  
-- `panorama.ipynb`
+This repository contains two separate Python/Jupyter Notebook projects:
 
+1. **Coin Detection, Segmentation, and Counting** (`coins.ipynb`):
+   - Detects Indian coins in an image using edge detection
+   - Segments each coin from the background
+   - Counts the total number of coins
+   - Shows the final detection and segmentation results
 
-## 1. Requirements and Setup
+2. **Image Stitching** (`panorama.ipynb`):
+   - Extracts keypoints from a set of overlapping images
+   - Matches keypoints and aligns images
+   - Stitches them to create a single panoramic image
 
-### Dependencies
-- **Python 3.7+**  
-- **Jupyter Notebook/Lab**  
-- **OpenCV** (`opencv-contrib-python` for SIFT features)  
-- **NumPy**  
-- **Matplotlib**
+The assignments are based on the requirements outlined in **Part 1** (coin detection and segmentation) and **Part 2** (image stitching) of the problem statement.
 
-Install dependencies:
+---
+
+## Table of Contents
+1. [Methods and Approach](#methods-and-approach)  
+2. [Installation and Requirements](#installation-and-requirements)  
+3. [Running the Notebooks](#running-the-notebooks)  
+   - [Coin Detection Notebook](#coin-detection-notebook)  
+   - [Panorama Notebook](#panorama-notebook)  
+4. [Results and Visual Outputs](#results-and-visual-outputs)  
+   - [Coins Detection and Segmentation](#coins-detection-and-segmentation)  
+   - [Panorama Creation](#panorama-creation)  
+5. [Observations](#observations)  
+6. [Repository Structure](#repository-structure)  
+7. [Credits](#credits)  
+
+---
+
+## Methods and Approach
+
+### Part 1: Coin Detection, Segmentation, and Counting
+
+1. **Edge Detection**  
+   - Load the input image of scattered Indian coins.  
+   - Convert the image to grayscale, if needed.  
+   - Use a smoothing filter or Gaussian blur to reduce noise.  
+   - Apply **Canny edge detection** to detect circular coin boundaries.  
+   - Use contour-finding methods (e.g., OpenCV `findContours`) to outline the coins.
+
+2. **Segmentation**  
+   - Perform a region-based segmentation technique (e.g., **Watershed** or **Thresholding** + **Morphology**) to isolate individual coins.  
+   - Each coin’s boundary is refined and labeled as a separate region.
+
+3. **Coin Counting**  
+   - After segmentation, count the total number of detected coins by counting the unique detected regions.
+
+### Part 2: Image Stitching (Panorama)
+
+1. **Keypoint Extraction**  
+   - Read multiple overlapping images.  
+   - Detect keypoints using **ORB** or **SIFT** (depending on library availability).  
+   - Compute descriptors for each keypoint.
+
+2. **Image Alignment and Homography**  
+   - Match descriptors across overlapping images.  
+   - Filter matches (e.g., Lowe’s ratio test).  
+   - Estimate a homography transformation that aligns the overlapping areas.
+
+3. **Stitching**  
+   - Warp one image onto the plane of the other using the estimated homography.  
+   - Blend the overlapped region to reduce visible seams.  
+   - Create a final stitched image (the panorama).
+
+---
+
+## Installation and Requirements
+
+1. **Python 3.7+**  
+2. **Jupyter Notebook** (optional but recommended for running `.ipynb` files interactively)  
+3. **Packages**:  
+   - `opencv-python`  
+   - `numpy`  
+   - `matplotlib`  
+   - `scikit-image` (optional, depending on exact segmentation approach)  
+   - Any other libraries explicitly imported in the notebooks (e.g., `imutils` if used)
+
+To install the dependencies, run:
 ```bash
-pip install opencv-contrib-python numpy matplotlib jupyter
-
-## 2. Part 1: Coin Detection, Segmentation, and Counting
-Notebook: coins.ipynb
-Methods
-
-    Detection:
-
-        Edge detection (Canny) + Hough Circle Transform
-
-    Segmentation:
-
-        Thresholding + Contour analysis
-
-    Counting:
-
-        Simple enumeration of detected coins
-
-How to Run
-
-    Place input images in images/ folder.
-
-    Update file paths in the notebook if needed.
-
-    Run all cells sequentially.
-
-    Outputs saved to:
-
-        images/coin_detection_output.jpg
-
-        images/coin_segmentation.jpg
-
-        images/coin_count.jpg
-
-Sample Outputs
-
-<img src="images/coin_detection_output.jpg" width="200"> <img src="images/coin_segmentation.jpg" width="200"> <img src="images/coin_count.jpg" width="200">
-3. Part 2: Panorama Creation
-Notebook: panorama(1).ipynb
-Methods
-
-    Keypoint Extraction:
-
-        SIFT features (requires OpenCV contrib)
-
-    Feature Matching:
-
-        FLANN-based matcher + RANSAC for homography
-
-    Warping & Blending:
-
-        Perspective transformation + Linear blending
-
-How to Run
-
-    Place panorama images (panoramaA.jpg, panoramaB.jpg, etc.) in images/.
-
-    Run all notebook cells.
-
-    Final panorama saved as images/panorama_result.jpg.
-
-Sample Output
-<img src="images/panorama_result.jpg" width="600">
-4. Observations
-Coin Detection
-
-    Works best with non-overlapping coins and uniform lighting.
-
-    Adjust cv2.HoughCircles() parameters for different coin sizes.
-
-Panorama
-
-    Requires ~30-50% overlap between images.
-
-    Works best with rotational camera motion (minimal translation).
-
-5. Troubleshooting
-
-    SIFT Errors: Install opencv-contrib-python instead of regular OpenCV.
-
-    Large File Sizes: Clear notebook outputs before commit:
-    bash
-    Copy
-
-    jupyter nbconvert --clear-output --inplace *.ipynb
-
-Contact
-
-    Name: Your Name
-
-    Email: your.email@domain.com
-
-    GitHub: your_github_handle
-
-Copy
-
-
-### Steps to Use:
-1. **Replace placeholders** like `YourName`, `YourRollNo`, and contact details.
-2. Ensure the `images/` folder and sample files exist in your repository.
-3. Run the command below to clear Jupyter notebook outputs (to reduce file size):
-   ```bash
-   jupyter nbconvert --clear-output --inplace coins.ipynb panorama(1).ipynb
-
-New chat
+pip install opencv-python numpy matplotlib scikit-image
+```
