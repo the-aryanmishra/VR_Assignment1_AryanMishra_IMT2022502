@@ -1,10 +1,23 @@
 # VR_Assignment1_AryanMishra_IMT2022502
 
-## Installation
+## Installation and Requirements
 **Clone the repository**:
 ```bash
 git clone https://github.com/the-aryanmishra/VR_Assignment1_AryanMishra_IMT2022502.git
 cd VR_Assignment1_AryanMishra_IMT2022502.git
+```
+1. **Python 3.7+**  
+2. **Jupyter Notebook** (optional but recommended for running `.ipynb` files interactively)  
+3. **Packages**:  
+   - `opencv-python`  
+   - `numpy`  
+   - `matplotlib`  
+   - `scikit-image` (optional, depending on exact segmentation approach)  
+   - Any other libraries explicitly imported in the notebooks (e.g., `imutils` if used)
+
+To install the dependencies, run:
+```bash
+pip install opencv-python numpy matplotlib scikit-image
 ```
 
 ## Overview
@@ -77,21 +90,6 @@ The assignments are based on the requirements outlined in **Part 1** (coin detec
 
 ---
 
-## Installation and Requirements
-
-1. **Python 3.7+**  
-2. **Jupyter Notebook** (optional but recommended for running `.ipynb` files interactively)  
-3. **Packages**:  
-   - `opencv-python`  
-   - `numpy`  
-   - `matplotlib`  
-   - `scikit-image` (optional, depending on exact segmentation approach)  
-   - Any other libraries explicitly imported in the notebooks (e.g., `imutils` if used)
-
-To install the dependencies, run:
-```bash
-pip install opencv-python numpy matplotlib scikit-image
-```
 ## Running the Notebooks
 
 Clone or download this repository, then open a terminal in the repository folder.
