@@ -165,6 +165,9 @@ jupyter notebook panorama.ipynb
   <img width="639" alt="b_keypoints" src="https://github.com/user-attachments/assets/6aaedd96-06d2-420e-a438-b427c2d50272" />
   <img width="639" alt="c_keypoints" src="https://github.com/user-attachments/assets/b3cf6c58-d57a-4117-a6e9-1ce24cd6349f" />
 
+The dots in the images indicate the keypoints and the circles centered around the keypoints indicate the scale(or size) of the respective  features, and also encode their orientation (the direction in which the feature is most distinctive).
+
+
 - **Stitched Panorama:**
   ![panorama_result](https://github.com/user-attachments/assets/bb4cd0f1-3f19-47df-934b-a750f81d5683)
 
