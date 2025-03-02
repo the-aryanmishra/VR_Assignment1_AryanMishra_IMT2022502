@@ -1,8 +1,5 @@
 # VR_Assignment1_AryanMishra_IMT2022502
 
-
-# VR Assignment 1 - Coin Detection & Segmentation and Panorama Creation
-
 ## Overview
 
 This repository contains two separate Python Notebooks:
