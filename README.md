@@ -97,8 +97,8 @@ pip install opencv-python numpy matplotlib scikit-image
 Clone or download this repository, then open a terminal in the repository folder.
 
 **Coin Detection Notebook**
-	1.	Place your coin image (containing multiple Indian coins) in the same folder or in an images/ subfolder.
-	2.	Open coins.ipynb in Jupyter Notebook:
+	- Go to the Part1 folder within the repository folder.
+	- Open coins.ipynb in Jupyter Notebook:
  ```bash
 jupyter notebook coins.ipynb
 ```
@@ -109,8 +109,8 @@ jupyter notebook coins.ipynb
    - Display the final detection overlay and the coin count.
 
 **Panorama Notebook**
-	-	Place your overlapping images for panorama creation in the same folder or in a subfolder.
-	-	Open panorama.ipynb in Jupyter Notebook:
+	- Go to the Part2 folder within the repository folder.
+	- Open panorama.ipynb in Jupyter Notebook:
  ```bash
 jupyter notebook panorama.ipynb
 ```
