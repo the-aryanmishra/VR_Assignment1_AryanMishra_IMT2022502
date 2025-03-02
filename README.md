@@ -121,21 +121,35 @@ jupyter notebook panorama.ipynb
 
 ## Results and Visual Outputs
 
-**Coins Detection and Segmentation**
-	- Input image: <img width="542" alt="coin_image2" src="https://github.com/user-attachments/assets/41d20bad-baa6-44a1-8073-0d278a3433ba" />
-	- Edges: <img width="309" alt="edges" src="https://github.com/user-attachments/assets/19f1c81b-40ba-4376-8671-8187a60d3b45" />
- 	- Detected coins: <img width="309" alt="detected coins" src="https://github.com/user-attachments/assets/8b74c462-dcd9-464c-a6ed-32cb2194ed31" />
-	- Coin Segmentation: <img width="320" alt="coin9" src="https://github.com/user-attachments/assets/26f88c4a-6587-4b76-835f-50ddd9683350" />
-<img width="328" alt="coin8" src="https://github.com/user-attachments/assets/ea356777-61d8-432b-9b0f-9a903096946e" />
-<img width="328" alt="coin7" src="https://github.com/user-attachments/assets/09495aca-1f07-4573-8569-159b9877bdcc" />
-<img width="328" alt="coin6" src="https://github.com/user-attachments/assets/5795040f-e7f9-444a-a250-8c1881382e70" />
-<img width="328" alt="coin5" src="https://github.com/user-attachments/assets/c033f14e-e925-47ea-bb86-5dfc6143869c" />
-<img width="328" alt="coin4" src="https://github.com/user-attachments/assets/de2943ce-634f-4db0-83e7-5a402404a04f" />
-<img width="328" alt="coin3" src="https://github.com/user-attachments/assets/0b270be1-5738-4f22-b1be-361e8dbe81d3" />
-<img width="328" alt="coin2" src="https://github.com/user-attachments/assets/88be7623-0a66-43f2-870d-fd2cf4ab71c9" />
-<img width="328" alt="coin1" src="https://github.com/user-attachments/assets/b7c22ea3-79b0-47f6-a427-1b9fb4b24101" />
-	- Coin Count: <img width="513" alt="coins_count" src="https://github.com/user-attachments/assets/1eee9b31-e3d6-4193-a6cb-734f13d612ae" />
+### Coins Detection and Segmentation
 
+- **Input image:**
+
+  <img width="542" alt="coin_image2" src="https://github.com/user-attachments/assets/41d20bad-baa6-44a1-8073-0d278a3433ba" />
+
+- **Edges:**
+
+  <img width="309" alt="edges" src="https://github.com/user-attachments/assets/19f1c81b-40ba-4376-8671-8187a60d3b45" />
+
+- **Detected coins:**
+
+  <img width="309" alt="detected coins" src="https://github.com/user-attachments/assets/8b74c462-dcd9-464c-a6ed-32cb2194ed31" />
+
+- **Coin Segmentation:**
+
+  <img width="320" alt="coin9" src="https://github.com/user-attachments/assets/26f88c4a-6587-4b76-835f-50ddd9683350" />
+  <img width="328" alt="coin8" src="https://github.com/user-attachments/assets/ea356777-61d8-432b-9b0f-9a903096946e" />
+  <img width="328" alt="coin7" src="https://github.com/user-attachments/assets/09495aca-1f07-4573-8569-159b9877bdcc" />
+  <img width="328" alt="coin6" src="https://github.com/user-attachments/assets/5795040f-e7f9-444a-a250-8c1881382e70" />
+  <img width="328" alt="coin5" src="https://github.com/user-attachments/assets/c033f14e-e925-47ea-bb86-5dfc6143869c" />
+  <img width="328" alt="coin4" src="https://github.com/user-attachments/assets/de2943ce-634f-4db0-83e7-5a402404a04f" />
+  <img width="328" alt="coin3" src="https://github.com/user-attachments/assets/0b270be1-5738-4f22-b1be-361e8dbe81d3" />
+  <img width="328" alt="coin2" src="https://github.com/user-attachments/assets/88be7623-0a66-43f2-870d-fd2cf4ab71c9" />
+  <img width="328" alt="coin1" src="https://github.com/user-attachments/assets/b7c22ea3-79b0-47f6-a427-1b9fb4b24101" />
+
+- **Coin Count:**
+
+  <img width="513" alt="coins_count" src="https://github.com/user-attachments/assets/1eee9b31-e3d6-4193-a6cb-734f13d612ae" />
 
 **Panorama Creation**
 	-	Stitched Panorama: The final panorama image is displayed, showing how multiple images were merged seamlessly.
