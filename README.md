@@ -171,15 +171,5 @@ The dots in the images indicate the keypoints and the circles centered around th
 
  
  ## Observations
-1.	Edge Detection Sensitivity
-	-	A well-chosen threshold in the Canny edge detector is crucial. If thresholds are too high/low, coins might be over-segmented or missed.
-	2.	Segmentation Challenges
-	-	If coins overlap or if the lighting is uneven, segmentation can be more difficult.
-	-	Morphological operations (e.g., dilation/erosion) help isolate coins.
-	3.	Counting Accuracy
-	-	The detection method works best when coins do not heavily overlap. Minor overlaps are generally still handled by contour segmentation.
-	4.	Panorama Stitching Accuracy
-	-	Quality of the final panorama depends on the amount of overlap and distinct features.
-	-	Blending artifacts can occur if exposure differs significantly between images.
-	5.	Performance
-	-	For real-time or large-scale images, efficient implementations or GPU support might be desired.
+- The lines inside coins were also were sensitive and initially falsely detected as edges, especially the 10 rupees coin due it having another circle inside the coin. The degree of blurring, kernel size and thresholds were accordingly adjusted to get our output.
+- We can observe seam, a bit of distortion around the edges, due to which the stitched image may appear a bit warped. This is due to misalignment, parllax and exposure differences
