@@ -89,3 +89,53 @@ To install the dependencies, run:
 ```bash
 pip install opencv-python numpy matplotlib scikit-image
 ```
+## Running the Notebooks
+
+Clone or download this repository, then open a terminal in the repository folder.
+
+**Coin Detection Notebook**
+	1.	Place your coin image (containing multiple Indian coins) in the same folder or in an images/ subfolder.
+	2.	Open coins.ipynb in Jupyter Notebook:
+ ```bash
+jupyter notebook coins.ipynb
+```
+3.	Run the notebook cell by cell:
+	•	The code will read the input image.
+	•	Perform edge detection, segmentation, and coin counting.
+	•	Display intermediate steps (edge map, segmented coins).
+	•	Display the final detection overlay and the coin count.
+
+**Panorama Notebook**
+	1.	Place your overlapping images for panorama creation in the same folder or in a subfolder.
+	2.	Open panorama.ipynb in Jupyter Notebook:
+ ```bash
+jupyter notebook panorama.ipynb
+```
+3.	Run the notebook cell by cell:
+	•	The code will detect keypoints in each image.
+	•	Match the keypoints and find homography.
+	•	Stitch the images together and display the final panorama.
+
+## Results and Visual Outputs
+
+**Coins Detection and Segmentation**
+	•	Detected Coins: An image with outlines (e.g., circles or contours) around each coin.
+	•	Coin Segmentation: Each coin is isolated (e.g., each coin might be shown in a different labeled mask or bounding box).
+	•	Coin Count: The total number of coins is printed (e.g., Total coins detected: 12).
+
+**Panorama Creation**
+	•	Stitched Panorama: The final panorama image is displayed, showing how multiple images were merged seamlessly.
+ 
+ ## Observations
+1.	Edge Detection Sensitivity
+	•	A well-chosen threshold in the Canny edge detector is crucial. If thresholds are too high/low, coins might be over-segmented or missed.
+	2.	Segmentation Challenges
+	•	If coins overlap or if the lighting is uneven, segmentation can be more difficult.
+	•	Morphological operations (e.g., dilation/erosion) help isolate coins.
+	3.	Counting Accuracy
+	•	The detection method works best when coins do not heavily overlap. Minor overlaps are generally still handled by contour segmentation.
+	4.	Panorama Stitching Accuracy
+	•	Quality of the final panorama depends on the amount of overlap and distinct features.
+	•	Blending artifacts can occur if exposure differs significantly between images.
+	5.	Performance
+	•	For real-time or large-scale images, efficient implementations or GPU support might be desired.
