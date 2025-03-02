@@ -5,7 +5,7 @@
 
 ## Overview
 
-This repository contains two separate Python/Jupyter Notebook projects:
+This repository contains two separate Python Notebooks:
 
 1. **Coin Detection, Segmentation, and Counting** (`coins.ipynb`):
    - Detects Indian coins in an image using edge detection
@@ -31,9 +31,7 @@ The assignments are based on the requirements outlined in **Part 1** (coin detec
 4. [Results and Visual Outputs](#results-and-visual-outputs)  
    - [Coins Detection and Segmentation](#coins-detection-and-segmentation)  
    - [Panorama Creation](#panorama-creation)  
-5. [Observations](#observations)  
-6. [Repository Structure](#repository-structure)  
-7. [Credits](#credits)  
+5. [Observations](#observations)
 
 ---
 
@@ -43,13 +41,15 @@ The assignments are based on the requirements outlined in **Part 1** (coin detec
 
 1. **Edge Detection**  
    - Load the input image of scattered Indian coins.  
-   - Convert the image to grayscale, if needed.  
+   - Convert the image to grayscale.  
    - Use a smoothing filter or Gaussian blur to reduce noise.  
-   - Apply **Canny edge detection** to detect circular coin boundaries.  
+   - Apply **Canny edge detection** to detect circular coin boundaries.
+   - Morphological closing to fill gaps in edges 
    - Use contour-finding methods (e.g., OpenCV `findContours`) to outline the coins.
 
 2. **Segmentation**  
-   - Perform a region-based segmentation technique (e.g., **Watershed** or **Thresholding** + **Morphology**) to isolate individual coins.  
+   - Perform a region-based segmentation technique to isolate individual coins.
+   - We have shown 3 different ways of doing so where we observe that all 3 methods work but method (b) gives a lot of vacant space also in the segmented output. Both Method(a) and method(c) seem to be giving the best results.
    - Each coin’s boundary is refined and labeled as a separate region.
 
 3. **Coin Counting**  
@@ -59,7 +59,7 @@ The assignments are based on the requirements outlined in **Part 1** (coin detec
 
 1. **Keypoint Extraction**  
    - Read multiple overlapping images.  
-   - Detect keypoints using **ORB** or **SIFT** (depending on library availability).  
+   - Detect keypoints using **SIFT**.  
    - Compute descriptors for each keypoint.
 
 2. **Image Alignment and Homography**  
@@ -69,7 +69,10 @@ The assignments are based on the requirements outlined in **Part 1** (coin detec
 
 3. **Stitching**  
    - Warp one image onto the plane of the other using the estimated homography.  
-   - Blend the overlapped region to reduce visible seams.  
+   - Blend the overlapped region to reduce visible seams.
+   - The above is done using Stitcher from the OpenCV module.
+   - Cylindrical warper function turned out to be the best for our requirement.
+   - Remove the black borders from the stitched image.
    - Create a final stitched image (the panorama).
 
 ---
@@ -114,14 +117,26 @@ jupyter notebook panorama.ipynb
 3.	Run the notebook cell by cell:
 	-	The code will detect keypoints in each image.
 	-	Match the keypoints and find homography.
-	-	Stitch the images together and display the final panorama.
+	-	Stitch the images together and display the final panorama. 
 
 ## Results and Visual Outputs
 
 **Coins Detection and Segmentation**
-	-	Detected Coins: An image with outlines (e.g., circles or contours) around each coin.
-	-	Coin Segmentation: Each coin is isolated (e.g., each coin might be shown in a different labeled mask or bounding box).
-	-	Coin Count: The total number of coins is printed (e.g., Total coins detected: 12).
+	-       input image: <img width="542" alt="coin_image2" src="https://github.com/user-attachments/assets/41d20bad-baa6-44a1-8073-0d278a3433ba" />
+
+	-	Edges: <img width="309" alt="edges" src="https://github.com/user-attachments/assets/19f1c81b-40ba-4376-8671-8187a60d3b45" />
+ 	-       Detected coins: <img width="309" alt="detected coins" src="https://github.com/user-attachments/assets/8b74c462-dcd9-464c-a6ed-32cb2194ed31" />
+	-	Coin Segmentation: <img width="320" alt="coin9" src="https://github.com/user-attachments/assets/26f88c4a-6587-4b76-835f-50ddd9683350" />
+<img width="328" alt="coin8" src="https://github.com/user-attachments/assets/ea356777-61d8-432b-9b0f-9a903096946e" />
+<img width="328" alt="coin7" src="https://github.com/user-attachments/assets/09495aca-1f07-4573-8569-159b9877bdcc" />
+<img width="328" alt="coin6" src="https://github.com/user-attachments/assets/5795040f-e7f9-444a-a250-8c1881382e70" />
+<img width="328" alt="coin5" src="https://github.com/user-attachments/assets/c033f14e-e925-47ea-bb86-5dfc6143869c" />
+<img width="328" alt="coin4" src="https://github.com/user-attachments/assets/de2943ce-634f-4db0-83e7-5a402404a04f" />
+<img width="328" alt="coin3" src="https://github.com/user-attachments/assets/0b270be1-5738-4f22-b1be-361e8dbe81d3" />
+<img width="328" alt="coin2" src="https://github.com/user-attachments/assets/88be7623-0a66-43f2-870d-fd2cf4ab71c9" />
+<img width="328" alt="coin1" src="https://github.com/user-attachments/assets/b7c22ea3-79b0-47f6-a427-1b9fb4b24101" />
+	-	Coin Count: <img width="513" alt="coins_count" src="https://github.com/user-attachments/assets/1eee9b31-e3d6-4193-a6cb-734f13d612ae" />
+
 
 **Panorama Creation**
 	-	Stitched Panorama: The final panorama image is displayed, showing how multiple images were merged seamlessly.
