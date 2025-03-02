@@ -39,7 +39,7 @@ The assignments are based on the requirements outlined in **Part 1** (coin detec
 1. **Edge Detection**  
    - Load the input image of scattered Indian coins.  
    - Convert the image to grayscale.  
-   - Use a smoothing filter or Gaussian blur to reduce noise.  
+   - Use a Gaussian blur to reduce noise.  
    - Apply **Canny edge detection** to detect circular coin boundaries.
    - Morphological closing to fill gaps in edges 
    - Use contour-finding methods (e.g., OpenCV `findContours`) to outline the coins.
@@ -59,16 +59,11 @@ The assignments are based on the requirements outlined in **Part 1** (coin detec
    - Detect keypoints using **SIFT**.  
    - Compute descriptors for each keypoint.
 
-2. **Image Alignment and Homography**  
-   - Match descriptors across overlapping images.  
-   - Filter matches (e.g., Lowe’s ratio test).  
-   - Estimate a homography transformation that aligns the overlapping areas.
-
-3. **Stitching**  
+2. **Stitching**  
    - Warp one image onto the plane of the other using the estimated homography.  
    - Blend the overlapped region to reduce visible seams.
    - The above is done using Stitcher from the OpenCV module.
-   - The Stitcher essentially matche descriptors across overlapping images, filters matches(e.g., Lowe’s ratio test) and finally estimates a homography transformation that aligns the overlapping areas.
+   - The Stitcher essentially matches descriptors across overlapping images, filters matches(e.g., Lowe’s ratio test) and finally estimates a homography transformation that aligns the overlapping areas.
    - Cylindrical warper function turned out to be the best for our requirement.
    - Remove the black borders from the stitched image.
    - Create a final stitched image (the panorama).
