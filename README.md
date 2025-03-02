@@ -1,5 +1,5 @@
 # VR_Assignment1_AryanMishra_IMT2022502
-
+NOTE: panorama.ipynb doesn't  has preview available as it's larger than 25MB and is imported using git LFS. So to view it, please download the raw file.
 ## Installation and Requirements
 **Clone the repository**:
 ```bash
