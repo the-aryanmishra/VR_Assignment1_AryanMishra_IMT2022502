@@ -71,6 +71,7 @@ The assignments are based on the requirements outlined in **Part 1** (coin detec
    - Warp one image onto the plane of the other using the estimated homography.  
    - Blend the overlapped region to reduce visible seams.
    - The above is done using Stitcher from the OpenCV module.
+   - The Stitcher essentially matche descriptors across overlapping images, filters matches(e.g., Lowe’s ratio test) and finally estimates a homography transformation that aligns the overlapping areas.
    - Cylindrical warper function turned out to be the best for our requirement.
    - Remove the black borders from the stitched image.
    - Create a final stitched image (the panorama).
