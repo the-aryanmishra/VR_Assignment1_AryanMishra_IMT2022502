@@ -151,8 +151,23 @@ jupyter notebook panorama.ipynb
 
   <img width="513" alt="coins_count" src="https://github.com/user-attachments/assets/1eee9b31-e3d6-4193-a6cb-734f13d612ae" />
 
-**Panorama Creation**
-	-	Stitched Panorama: The final panorama image is displayed, showing how multiple images were merged seamlessly.
+	
+ ### Panorama Creation
+
+- **Input images:**
+![imageA](https://github.com/user-attachments/assets/c4fc048a-9977-4c3c-bf43-8dc9e69b803d)
+![imageB](https://github.com/user-attachments/assets/69c35de3-6aed-4415-ad4c-7f06e764b99a)
+![imageC](https://github.com/user-attachments/assets/54c7c955-76d7-4051-ad97-95a1fa010101)
+
+- **Keypoints:**
+
+  <img width="639" alt="a_keypoints" src="https://github.com/user-attachments/assets/6d8d0706-9584-48b3-8a35-a10ecf36812f" />
+  <img width="639" alt="b_keypoints" src="https://github.com/user-attachments/assets/6aaedd96-06d2-420e-a438-b427c2d50272" />
+  <img width="639" alt="c_keypoints" src="https://github.com/user-attachments/assets/b3cf6c58-d57a-4117-a6e9-1ce24cd6349f" />
+
+- **Stitched Panorama:**
+  ![panorama_result](https://github.com/user-attachments/assets/bb4cd0f1-3f19-47df-934b-a750f81d5683)
+
  
  ## Observations
 1.	Edge Detection Sensitivity
